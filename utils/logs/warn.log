@@ -1,0 +1,2 @@
+{"level":"warn","message":"ruta /productos, método POST no implementada"}
+{"level":"warn","message":"ruta /productos/:categoria/computacion, método GET no implementada"}
