@@ -8,8 +8,7 @@ const productSchema = new mongoose.Schema({
     price: { type: Number },
     category: { type: String },
     description: { type: String },
-    stock: { type: Number },
-    time_Stamp: { type: String }
+    thumbnail: {type: String}
 });
 
 let instance = null;
@@ -26,11 +25,11 @@ class ProductDaoMongoAtlas {
 
     async createId() {
         try {
-            let id = 1
+            let id = 1;
             const products = await this.getAllProducts();
             if (products.length > 0) {
-                const i = products.length - 1
-                id = (products[i].id) + 1
+                const i = products.length - 1;
+                id = (products[i].id) + 1;
             }
             return id;
         } catch (error) {
@@ -47,7 +46,6 @@ class ProductDaoMongoAtlas {
     async createProduct(productToAdd) {
         try {
             productToAdd.id = await this.createId();
-            productToAdd.time_Stamp = new Date().toISOString();
             const newProduct = this.collection(productToAdd);
             await newProduct.save();
         } catch (error) {
@@ -65,7 +63,8 @@ class ProductDaoMongoAtlas {
 
     async getProductsBy_Id(id) {
         try {
-            return await this.collection.find({ _id: id });
+            const _id = mongoose.Types.ObjectId(id);
+            return await this.collection.find({ _id: _id });
         } catch (error) {
             throw new Error('El id ingresado es incorrecto');
         }
@@ -74,6 +73,14 @@ class ProductDaoMongoAtlas {
     async getProductsByCategory(category) {
         try {
             return await this.collection.find({category:category});
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    async getProductsById(id) {
+        try {
+            return await this.collection.find({id:id});
         } catch (error) {
             console.log(error);
         }

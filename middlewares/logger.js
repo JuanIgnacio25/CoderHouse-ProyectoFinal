@@ -1,4 +1,4 @@
-const { logger } = require('../utils/winston');
+const { logger } = require('../utils/logger');
 
 const info = (req, res, next) => {
     logger.info(`ruta ${req.url}, método ${req.method}`)

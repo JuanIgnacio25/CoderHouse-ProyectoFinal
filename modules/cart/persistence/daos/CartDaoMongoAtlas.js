@@ -2,20 +2,82 @@ const database = require('../../../../configs/mongoAtlas');
 database.connect();
 const mongoose = require('mongoose');
 
-mongoose.Schema({
-    id: {type:Number},
-    email: {type:String},
-    time_Stamp: {type:String},
-    delivery_Address: {type:String},
-    items: {type:String}
+const cartSchema = new mongoose.Schema({
+    id: { type: Number },
+    email: { type: String },
+    time_Stamp: { type: String },
+    delivery_Address: { type: String },
+    items: { type: Array }
 })
 
 let instance = null
 
-class CartDaoMongoAtlas{
-    static getInstance(){
-        if(!instance) instance = new CartDaoMongoAtlas();
+class CartDaoMongoAtlas {
+    constructor() {
+        this.collection = mongoose.model('carrito', cartSchema);
+    }
+    static getInstance() {
+        if (!instance) instance = new CartDaoMongoAtlas();
         return instance;
+    }
+
+    async createId() {
+        try {
+            let id = 1;
+            const carts = await this.getAllCarts();
+            if (carts.length > 0) {
+                const i = carts.length - 1;
+                id = (carts[i].id) + 1;
+            }
+            return id;
+        } catch (error) {
+        }
+    }
+
+    async getAllCarts() {
+        try {
+            return await this.collection.find();
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    async getCartById(id) {
+        try {
+            return await this.collection.find({ id: id });
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    async createCart(cart) {
+        try {
+            const id = await this.createId();
+            cart.id = id;
+            const newCart = this.collection(cart);
+            await newCart.save();
+            return id;
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    async updateCart(cart_Id, data) {
+        try {
+            const result = await this.collection.updateOne({ id: cart_Id }, { $set: { items: data.items } });
+            return result;
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    async deleteById(id) {
+        try {
+            const result = await this.collection.findOneAndDelete({ id: id });
+            return result;
+        } catch (error) {
+            console.log(error)
+        }
     }
 }
 

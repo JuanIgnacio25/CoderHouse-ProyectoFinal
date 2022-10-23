@@ -1,17 +1,22 @@
-const {ProductController} = require('./ProductController');
+const { ProductController } = require('./ProductController');
+const { authenticateToken, isAdmin } = require('../../middlewares/auth');
 const productController = new ProductController();
 const productRouter = require('express').Router();
 
-productRouter.get('/', productController.getAllProducts);
-productRouter.get('/:categoria', productController.getByCategory);
-productRouter.get('/:id', productController.getProduct);
+productRouter.get('/', authenticateToken, productController.getAllProducts);
+productRouter.get('/categoria/:categoria', authenticateToken, productController.getByCategory);
+productRouter.get('/id/:id', authenticateToken, productController.getProduct);
+productRouter.get('/put/:id',authenticateToken,productController.handlerUpdate);
 
+productRouter.post('/', authenticateToken, isAdmin, productController.createProduct);
 
-productRouter.post('/',productController.createProduct);
+productRouter.put('/:id', authenticateToken, productController.updateProductById);
 
-productRouter.put('/:id',productController.updateProductById);
+productRouter.delete('/:id', authenticateToken, productController.deleteProductById);
 
-productRouter.delete('/:id',productController.deleteProductById);
+productRouter.post('/put/:id', authenticateToken, productController.updateProductById);
+
+productRouter.post('/delete/:id', authenticateToken, productController.deleteProductById);
 
 module.exports = {
     productRouter

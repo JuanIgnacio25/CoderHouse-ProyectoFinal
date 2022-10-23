@@ -1,15 +1,22 @@
-const e = require("express");
 const { ProductDaoFactory } = require("./persistence/productDaoFactory")
 
 class ProductService {
-    constructor() {
-        this.dao = new ProductDaoFactory().getDao(process.env.NODE_ENV);
+    constructor(type) {
+        this.dao = new ProductDaoFactory().getDao(type);
     }
 
     async getProducts(id) {
         try {
             if (id) return await this.dao.getProductsBy_Id(id);
             return await this.dao.getAllProducts();
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    async getProductsById(id){
+        try {
+            return (await this.dao.getProductsById(id))[0];
         } catch (error) {
             console.log(error);
         }
