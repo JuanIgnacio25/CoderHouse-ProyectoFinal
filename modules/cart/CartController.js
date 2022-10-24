@@ -20,8 +20,9 @@ class CartController{
         try {
             const cart_Id = req.user.cart_Id;
             const cart = await cartService.getCartById(cart_Id);
+            const total_Price = cart.total_Price;
             const products = cart.items;
-            res.render('cart',{products:products});
+            res.render('cart',{total_Price,products:products});
         } catch (error) {
             console.log(error);
         }

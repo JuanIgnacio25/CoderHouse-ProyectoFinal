@@ -7,7 +7,8 @@ const cartSchema = new mongoose.Schema({
     email: { type: String },
     time_Stamp: { type: String },
     delivery_Address: { type: String },
-    items: { type: Array }
+    items: { type: Array },
+    total_Price: {type: Number}
 })
 
 let instance = null
@@ -64,7 +65,7 @@ class CartDaoMongoAtlas {
 
     async updateCart(cart_Id, data) {
         try {
-            const result = await this.collection.updateOne({ id: cart_Id }, { $set: { items: data.items } });
+            const result = await this.collection.updateOne({ id: cart_Id }, { $set: { items: data.items, total_Price:data.total_Price } });
             return result;
         } catch (error) {
             console.log(error);

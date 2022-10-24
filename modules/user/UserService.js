@@ -43,24 +43,13 @@ class UserService {
         }
     }
 
-    /*async logInUser(user){
+    async updateCartId(user_Id,newCartId){
         try {
-            const userFound = await this.dao.findUser(user.email);
-            if(userFound.length < 1)throw new Error('Usuario incorrecto');
-            if(!(bcrypt.compareSync(user.password,userFound[0].password))) throw new Error('Contraseña Incorrecta');
-
-            const payload = {
-                email : user.email,
-                id : user.id
-            }
-
-            const token = jwt.sign(payload,process.env.JWT_SECRET,{expiresIn: "1d"});
-            return token;
+            await this.dao.updateCartId(user_Id,newCartId);
         } catch (error) {
             console.log(error);
-            throw error        
         }
-    }*/
+    }
 }
 
 module.exports = {

@@ -36,12 +36,6 @@ class ProductDaoMongoAtlas {
         }
     }
 
-    async validateIdProduct(id) {
-        try {
-        } catch (error) {
-            console.log(error);
-        }
-    }
 
     async createProduct(productToAdd) {
         try {

@@ -2,18 +2,18 @@ const transport = require("./transport");
 
 const sendEmailNewOrder = (fromEmail, toEmail, order ) => {
   let li = ""
-  order.products.forEach(product => {
-    li = li + `<li> ${product.title} - quantity: ${product.quantity} </li>`
+  order.items.forEach(item => {
+    li = li + `<li> ${item.title} - quantity: ${item.quantity} </li>`
   }) 
   transport.sendMail({
-    from: `Facundo ${fromEmail}`,
+    from: `Juan Ignacio ${fromEmail}`,
     to:toEmail,
     html:`<h1>List of items:</h1>
             <ul> 
                 ${li}
             </ul>
-          <h2> Shipping Address: ${order.shippingAddress} </h2>
-          <h2> Total: ${order.total}$ </h2>`,
+          <h2> Delivery Address: ${order.delivery_Address} </h2>
+          <h2> Total: ${order.total_Price}$ </h2>`,
     subject:`New Purchase from the User: ${order.email}`
 }).then((data)=> {
     console.log("Email enviado");

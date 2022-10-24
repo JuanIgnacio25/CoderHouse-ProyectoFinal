@@ -52,3 +52,7 @@
 {"level":"warn","message":"ruta /carrito/1, método GET no implementada"}
 {"level":"warn","message":"ruta /cart/delete/1, método POST no implementada"}
 {"level":"warn","message":"ruta /favicon.ico, método GET no implementada"}
+{"level":"warn","message":"ruta /orders/buy, método POST no implementada"}
+{"level":"warn","message":"ruta /favicon.ico, método GET no implementada"}
+{"level":"warn","message":"ruta /orders/buy/4, método POST no implementada"}
+{"level":"warn","message":"ruta /orders/buy, método POST no implementada"}

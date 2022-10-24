@@ -37,6 +37,8 @@
     {{/if}}
 </div>
 
-<form action="/api/cart/buy" method="POST">
+<h2>Total Price ${{this.total_Price}}</h2>
+
+<form action="/ordenes/buy" method="POST">
     <input type="submit" value="Complete the Purchase">
 </form>

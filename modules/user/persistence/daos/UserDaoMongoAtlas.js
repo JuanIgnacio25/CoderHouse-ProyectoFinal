@@ -7,9 +7,9 @@ const userSchema = new mongoose.Schema({
     password: { type: String },
     name: { type: String },
     address: { type: String },
-    id: {type:Number},
-    admin: {type:Boolean},
-    cart_Id: {type:Number}
+    id: { type: Number },
+    admin: { type: Boolean },
+    cart_Id: { type: Number }
 });
 
 let instance = null;
@@ -42,13 +42,13 @@ class UserDaoMongoAtlas {
             user.id = await this.createId();
             const newUser = this.collection(user);
             const result = await newUser.save();
-            return result;       
+            return result;
         } catch (error) {
             throw error;
         }
     }
 
-    async getAllUsers(){
+    async getAllUsers() {
         try {
             return await this.collection.find();
         } catch (error) {
@@ -56,9 +56,18 @@ class UserDaoMongoAtlas {
         }
     }
 
-    async findUser(email){
+    async findUser(email) {
         try {
-            return (await this.collection.find({email:email}))[0];
+            return (await this.collection.find({ email: email }))[0];
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    async updateCartId(user_Id, newCart_Id) {
+        try {
+            const result = await this.collection.updateOne({ id: user_Id }, { set: { cart_Id: newCart_Id } });
+            return result
         } catch (error) {
             console.log(error);
         }

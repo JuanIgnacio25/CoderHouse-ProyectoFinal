@@ -12,7 +12,8 @@ class CartService {
             email: email,
             delivery_Address: delivery_Address,
             items: [],
-            time_Stamp: new Date().toISOString()
+            time_Stamp: new Date().toISOString(),
+            total_Price: 0
         }
         const idCart = await this.dao.createCart(cartToCreate);
         return idCart;
@@ -39,6 +40,7 @@ class CartService {
             }
             const cartToUpdate = await this.getCartById(cart_Id);
             cartToUpdate.items.push(productToAdd);
+            cartToUpdate.total_Price = (cartToUpdate.items.reduce((accum, item) => accum += item.price * item.quantity, 0)).toFixed(2);
             await this.dao.updateCart(cart_Id, cartToUpdate);
         } catch (error) {
             console.log(error);
@@ -50,7 +52,16 @@ class CartService {
             const cart = await this.getCartById(cart_Id);
             const modifiedItems = cart.items.filter((item) => item.id != parseInt(product_Id));
             cart.items = modifiedItems;
+            cart.total_Price = (cart.items.reduce((accum, item) => accum += item.price * item.quantity, 0)).toFixed(2);
             return await this.dao.updateCart(cart_Id,cart);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    async deleteCartById(id){
+        try {
+            return await this.dao.deleteById(id);
         } catch (error) {
             console.log(error);
         }

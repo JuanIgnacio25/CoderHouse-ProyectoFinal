@@ -10,6 +10,7 @@ const logger = require('./middlewares/logger');
 const { productRouter } = require('./modules/products/productRoutes');
 const { cartRouter } = require('./modules/cart/cartRoutes');
 const { userRouter } = require('./modules/user/UserRoutes');
+const {ordersRouter} = require('./modules/orders/ordersRoutes');
 
 
 const app = express();
@@ -17,7 +18,7 @@ const app = express();
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-//app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public'));
 app.use(logger.info);
 
 app.engine('hbs', engine({
@@ -33,6 +34,7 @@ app.set('view engine', 'hbs');
 app.use('/', userRouter);
 app.use('/productos', productRouter);
 app.use('/carrito', cartRouter);
+app.use('/ordenes', ordersRouter);
 
 app.use(logger.errorRoute);
 app.use(logger.catchError);
