@@ -4,8 +4,7 @@ const mongoose = require('mongoose');
 database.connect();
 const chatSchema = new mongoose.Schema({
     email: { type: String },
-    type: { type: String },
-    time_stamp: { type: String },
+    time_Stamp: { type: String },
     message: { type: String }
 })
 
@@ -15,7 +14,7 @@ let instance = null
 
 class ChatDaoMongoAtlas {
     constructor() {
-        this.collection = mongoose.model('chat', chatSchema);
+        this.collection = mongoose.model('mensajes', chatSchema);
     }
 
     static getInstance() {
@@ -49,6 +48,6 @@ class ChatDaoMongoAtlas {
     }
 }
 
-module.export = {
+module.exports = {
     ChatDaoMongoAtlas
 }

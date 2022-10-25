@@ -10,10 +10,18 @@ const logger = require('./middlewares/logger');
 const { productRouter } = require('./modules/products/productRoutes');
 const { cartRouter } = require('./modules/cart/cartRoutes');
 const { userRouter } = require('./modules/user/UserRoutes');
-const {ordersRouter} = require('./modules/orders/ordersRoutes');
+const { ordersRouter } = require('./modules/orders/ordersRoutes');
+const { chatRouter } = require('./modules/chat/chatRoutes');
 
 
 const app = express();
+
+const http = require('http');
+const server = http.createServer(app);
+const { Server } = require('socket.io');
+const io = new Server(server);
+const { socketServer } = require('./modules/chat/socketServer');
+
 
 app.use(cookieParser());
 app.use(express.json());
@@ -35,12 +43,17 @@ app.use('/', userRouter);
 app.use('/productos', productRouter);
 app.use('/carrito', cartRouter);
 app.use('/ordenes', ordersRouter);
+app.use('/chat', chatRouter);
+
+io.on('connection' , (socket) => {
+    socketServer(io,socket);
+}) 
 
 app.use(logger.errorRoute);
 app.use(logger.catchError);
 
 const port = process.env.PORT || 8080;
 
-app.listen(port, () => {
-    console.log(`Listening on port ${port}`);
-});
+server.listen(port, () => {
+    console.log(`Server listening on port ${port}`);
+})

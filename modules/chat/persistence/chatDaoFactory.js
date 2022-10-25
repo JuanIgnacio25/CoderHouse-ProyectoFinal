@@ -1,4 +1,4 @@
-const {ChatDaoMongoAtlas} = require('./daos/ChatDaoMongoAtlas')
+const { ChatDaoMongoAtlas } = require('./daos/ChatDaoMongoAtlas')
 
 class ChatDaoFactory {
     getDao(type) {

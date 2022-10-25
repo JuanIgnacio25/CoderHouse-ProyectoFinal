@@ -56,3 +56,8 @@
 {"level":"warn","message":"ruta /favicon.ico, método GET no implementada"}
 {"level":"warn","message":"ruta /orders/buy/4, método POST no implementada"}
 {"level":"warn","message":"ruta /orders/buy, método POST no implementada"}
+{"level":"warn","message":"ruta /chat, método GET no implementada"}
+{"level":"warn","message":"ruta /main.js, método GET no implementada"}
+{"level":"warn","message":"ruta /main.js, método GET no implementada"}
+{"level":"warn","message":"ruta /main.js, método GET no implementada"}
+{"level":"warn","message":"ruta /chat/nachocolli1@gmail.com?, método GET no implementada"}

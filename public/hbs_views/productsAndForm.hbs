@@ -4,6 +4,9 @@
 <form action="/carrito">
     <input type="submit" value="Cart">
 </form>
+<form action="/chat">
+    <input type="submit" value="Chat">
+</form>
 
 <h1>Products</h1>
 <div>
@@ -40,8 +43,8 @@
                 </td>
                 <td>
                     <form action="/productos/put/{{this.id}}" method="GET">
-                    <input type="submit" value="Update Product">
-                </form>
+                        <input type="submit" value="Update Product">
+                    </form>
                 </td>
             </tr>
             {{/each}}
@@ -56,11 +59,11 @@
     {{#if isAdmin}}
     <h1>Add Product</h1>
     <form action="/productos/" method="POST">
-        <input placeholder="Title" type="text" name="title">
-        <input placeholder="Price" type="number" step="0.01" name="price">
-        <input placeholder="Category" type="text" name="category">
-        <input placeholder="Descrption" type="text" name="description">
-        <input placeholder="Thumbnail" type="text" name="thumbnail">
+        <input placeholder="Title" type="text" name="title" required>
+        <input placeholder="Price" type="number" step="0.01" name="price" required>
+        <input placeholder="Category" type="text" name="category" required>
+        <input placeholder="Descrption" type="text" name="description" required>
+        <input placeholder="Thumbnail" type="text" name="thumbnail" required>
         <input type="submit" value="Add Product">
     </form>
     {{/if}}
