@@ -1,4 +1,4 @@
-const { ChatDaoFactory } = require("./persistence/chatDaoFactory")
+const { ChatDaoFactory } = require("./persistence/chatDaoFactory");
 
 class ChatService{
     constructor(type){

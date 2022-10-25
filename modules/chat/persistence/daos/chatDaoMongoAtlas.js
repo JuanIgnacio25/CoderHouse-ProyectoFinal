@@ -22,28 +22,28 @@ class ChatDaoMongoAtlas {
         return instance;
     }
 
-    async addMessage(message){
+    async addMessage(message) {
         try {
-            const newMessage =  this.collection(message);
+            const newMessage = this.collection(message);
             await newMessage.save();
         } catch (error) {
-            
+            throw error;
         }
     }
 
-    async getAllMessages(){
+    async getAllMessages() {
         try {
             return await this.collection.find();
         } catch (error) {
-            console.log(error);
+            throw error;
         }
     }
 
-    async getMessagesByEmail(email){
+    async getMessagesByEmail(email) {
         try {
-            return await this.collection.find({email:email});
+            return await this.collection.find({ email: email });
         } catch (error) {
-            console.log(error);
+            throw error;
         }
     }
 }

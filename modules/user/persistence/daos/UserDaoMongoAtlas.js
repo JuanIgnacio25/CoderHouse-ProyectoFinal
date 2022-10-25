@@ -34,6 +34,7 @@ class UserDaoMongoAtlas {
             }
             return id;
         } catch (error) {
+            throw error;
         }
     }
 
@@ -52,7 +53,7 @@ class UserDaoMongoAtlas {
         try {
             return await this.collection.find();
         } catch (error) {
-            console.log(error);
+            throw error;
         }
     }
 
@@ -60,7 +61,7 @@ class UserDaoMongoAtlas {
         try {
             return (await this.collection.find({ email: email }))[0];
         } catch (error) {
-            console.log(error);
+            throw error;
         }
     }
 
@@ -69,7 +70,7 @@ class UserDaoMongoAtlas {
             const result = await this.collection.updateOne({ id: user_Id }, { set: { cart_Id: newCart_Id } });
             return result
         } catch (error) {
-            console.log(error);
+            throw error;
         }
     }
 }

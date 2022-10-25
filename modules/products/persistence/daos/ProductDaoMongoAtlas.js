@@ -8,7 +8,7 @@ const productSchema = new mongoose.Schema({
     price: { type: Number },
     category: { type: String },
     description: { type: String },
-    thumbnail: {type: String}
+    thumbnail: { type: String }
 });
 
 let instance = null;
@@ -33,6 +33,8 @@ class ProductDaoMongoAtlas {
             }
             return id;
         } catch (error) {
+            logger.error(error.message);
+            throw error;
         }
     }
 
@@ -43,7 +45,7 @@ class ProductDaoMongoAtlas {
             const newProduct = this.collection(productToAdd);
             await newProduct.save();
         } catch (error) {
-            throw new Error('Algo salio mal al crear un producto');
+            throw error;
         }
     }
 
@@ -51,7 +53,7 @@ class ProductDaoMongoAtlas {
         try {
             return await this.collection.find();
         } catch (error) {
-            console.log(error);
+            throw error;
         }
     }
 
@@ -60,41 +62,41 @@ class ProductDaoMongoAtlas {
             const _id = mongoose.Types.ObjectId(id);
             return await this.collection.find({ _id: _id });
         } catch (error) {
-            throw new Error('El id ingresado es incorrecto');
+            throw error;
         }
     }
 
     async getProductsByCategory(category) {
         try {
-            return await this.collection.find({category:category});
+            return await this.collection.find({ category: category });
         } catch (error) {
-            console.log(error);
+            throw error;
         }
     }
 
     async getProductsById(id) {
         try {
-            return await this.collection.find({id:id});
+            return await this.collection.find({ id: id });
         } catch (error) {
-            console.log(error);
+            throw error;
         }
     }
 
-    async updateProductById(id,product) {
+    async updateProductById(id, product) {
         try {
             const updateProduct = await this.collection.updateOne({ id: id }, { $set: { title: product.title, price: product.price, code: product.code, description: product.description, stock: product.stock } });;
             return updateProduct;
         } catch (error) {
-            console.log(error);
+            throw error;
         }
     }
 
-    async deleteProductById(id){
+    async deleteProductById(id) {
         try {
-            const deleteProduct = await this.collection.findOneAndDelete({id:id});
+            const deleteProduct = await this.collection.findOneAndDelete({ id: id });
             return deleteProduct;
         } catch (error) {
-         console.log(error);
+            throw error;
         }
     }
 }

@@ -34,7 +34,7 @@ class OrdersDaoMongoAtlas {
             }
             return orderNumber;
         } catch (error) {
-            console.loh(error);
+            throw error;
         }
     }
 
@@ -46,7 +46,7 @@ class OrdersDaoMongoAtlas {
             newOrder.save();
             return orderNumber;
         } catch (error) {
-            console.log(error);
+            throw error;
         }
     }
 
@@ -54,7 +54,7 @@ class OrdersDaoMongoAtlas {
         try {
             return await this.collection.find();
         } catch (error) {
-            console.log(error);
+            throw error;
         }
     }
 }

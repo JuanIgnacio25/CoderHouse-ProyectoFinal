@@ -10,7 +10,7 @@ const authenticationCheck = async (req, res, next ) => {
   try{
     let user = await userService.findUser(req.body.email);
     if (user === undefined ) {
-      return res.status(404).send({error: `There isnt an account with the email: ${req.body.email}`});
+      return res.render('error',{error: `Email Incorrecto`});
     }
     
     if(await bcrypt.compare(req.body.password, user.password)){
@@ -21,7 +21,7 @@ const authenticationCheck = async (req, res, next ) => {
       });
       next();
     } else{
-      res.render("failLogin.ejs",{error: "Incorrect Password"});
+      res.render("error",{error: "Contraseña Incorrecta"});
     }
   }catch(err){
     console.log(err);
@@ -57,7 +57,6 @@ const authenticateToken = ( req, res, next ) => {
           });
           next();
         } else {
-          console.log(err);
           res.redirect("/login");
         }
       })
@@ -71,7 +70,7 @@ const isAdmin = ( req, res, next ) => {
   if(req.user.admin){
     next();
   } else {
-    res.status(403).send({error: "You do not have admin permissions for this request"});
+    res.render('error' , {error:"No tiene permisos de administrador para esta solicitud"});
   } 
 }
 

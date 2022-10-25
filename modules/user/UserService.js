@@ -1,7 +1,8 @@
 const { UserDaoFactory } = require("./persistence/UserDaoFactory");
 const { CartService } = require("../cart/CartService");
 const bcrypt = require('bcrypt');
-const {sendEmailNewOrder,sendEmailNewUser} = require('../../utils/nodemailer');
+const {sendEmailNewUser} = require('../../utils/nodemailer');
+const {logger} = require('../../utils/logger');
 
 
 class UserService {
@@ -15,12 +16,20 @@ class UserService {
             const userFound = await this.dao.findUser(email);
             if(userFound !== undefined) throw new Error('Usuario Existente');
         } catch (error) {
-            throw error
+            logger.error(error.message);
+            throw error;
+        }
+    }
+
+    checkValidFields(user){
+        if(user.email === undefined || user.email === '' || user.password === undefined || user.password === '' || user.name === undefined || user.name === '' || user.address === undefined || user.address === ''){
+            throw new Error('Algun campo esta vacio o es invalido');
         }
     }
 
     async saveNewUser(user) {
         try {
+            this.checkValidFields(user);
             await this.checkExistingUser(user.email);
             const encryptedPassword = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10));
             user.password = encryptedPassword;
@@ -31,7 +40,8 @@ class UserService {
             const newUser = await this.dao.saveNewUser(user);
             return newUser;
         } catch (error) {
-            throw error
+            logger.error(error.message);
+            throw error;
         }
     }
 
@@ -39,7 +49,8 @@ class UserService {
         try {
             return await this.dao.findUser(email);
         } catch (error) {
-            console.log(error);
+            logger.error(error.message);
+            throw error;
         }
     }
 
@@ -47,7 +58,8 @@ class UserService {
         try {
             await this.dao.updateCartId(user_Id,newCartId);
         } catch (error) {
-            console.log(error);
+            logger.error(error.message);
+            throw error;
         }
     }
 }

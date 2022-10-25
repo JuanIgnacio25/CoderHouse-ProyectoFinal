@@ -8,7 +8,7 @@ const cartSchema = new mongoose.Schema({
     time_Stamp: { type: String },
     delivery_Address: { type: String },
     items: { type: Array },
-    total_Price: {type: Number}
+    total_Price: { type: Number }
 })
 
 let instance = null
@@ -32,6 +32,7 @@ class CartDaoMongoAtlas {
             }
             return id;
         } catch (error) {
+            throw error;
         }
     }
 
@@ -39,7 +40,7 @@ class CartDaoMongoAtlas {
         try {
             return await this.collection.find();
         } catch (error) {
-            console.log(error);
+            throw error;
         }
     }
 
@@ -47,7 +48,7 @@ class CartDaoMongoAtlas {
         try {
             return await this.collection.find({ id: id });
         } catch (error) {
-            console.log(error);
+            throw error;
         }
     }
 
@@ -59,16 +60,16 @@ class CartDaoMongoAtlas {
             await newCart.save();
             return id;
         } catch (error) {
-            console.log(error);
+            throw error;
         }
     }
 
     async updateCart(cart_Id, data) {
         try {
-            const result = await this.collection.updateOne({ id: cart_Id }, { $set: { items: data.items, total_Price:data.total_Price } });
+            const result = await this.collection.updateOne({ id: cart_Id }, { $set: { items: data.items, total_Price: data.total_Price } });
             return result;
         } catch (error) {
-            console.log(error);
+            throw error;
         }
     }
 
@@ -77,7 +78,7 @@ class CartDaoMongoAtlas {
             const result = await this.collection.findOneAndDelete({ id: id });
             return result;
         } catch (error) {
-            console.log(error)
+            throw error;
         }
     }
 }

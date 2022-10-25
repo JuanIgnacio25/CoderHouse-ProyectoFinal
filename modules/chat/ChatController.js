@@ -1,5 +1,6 @@
 const { ChatService } = require('./ChatService');
 const chatService = new ChatService(process.env.NODE_ENV);
+const {logger} = require('../../utils/logger');
 
 class ChatController {
 
@@ -13,7 +14,8 @@ class ChatController {
             const messages = await chatService.getMessagesByEmail(email);
             res.render('ownMessages', {messages:messages});
         } catch (error) {
-            console.log(error);
+            logger.error(error.message);
+            res.render('error', {error:error.message});
         }
     }
 }

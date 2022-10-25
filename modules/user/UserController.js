@@ -1,6 +1,6 @@
-const { Console } = require('winston/lib/winston/transports');
 const { UserService } = require('./UserService');
 const userService = new UserService(process.env.NODE_ENV);
+const { logger } = require('../../utils/logger');
 
 class UserController {
     constructor() {
@@ -31,7 +31,7 @@ class UserController {
     async saveNewUser(req, res) {
         try {
             const user = req.body;
-            if (user.password !== user.verifiedPassword) return res.status(404).send('Las Contraseñas no coinciden');
+            if (user.password !== user.verifiedPassword) throw new Error('Las Contraseñas no coinciden');
             const userToAdd = {
                 email: user.email,
                 password: user.password,
@@ -41,20 +41,10 @@ class UserController {
             const newUser = await userService.saveNewUser(userToAdd);
             if (newUser) res.status(201).redirect('/login');
         } catch (error) {
-            console.log(error);
-            res.status(406).send(error.message);
+            logger.error(error.message);
+            res.render('error', { error: error.message })
         }
     }
-
-    /*async loginUser(req,res){
-        try {
-            const token = await userService.logInUser(req.body);
-            res.status(200).send(`Logeado exitosamente ${token}`);
-        } catch (error) {
-            res.status(404).send(error.message);
-        }
-    }*/
-
 
 }
 

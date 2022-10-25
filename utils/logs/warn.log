@@ -61,3 +61,65 @@
 {"level":"warn","message":"ruta /main.js, método GET no implementada"}
 {"level":"warn","message":"ruta /main.js, método GET no implementada"}
 {"level":"warn","message":"ruta /chat/nachocolli1@gmail.com?, método GET no implementada"}
+{"level":"error","message":"Las Contraseñas no coinciden"}
+{"level":"error","message":"Las Contraseñas no coinciden"}
+{"level":"error","message":"Usuario Existente"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Las Contraseñas no coinciden"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Las Contraseñas no coinciden"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"logger is not defined"}
+{"level":"error","message":"Usuario Existente"}
+{"level":"error","message":"Usuario Existente"}
+{"level":"error","message":"Usuario Existente"}
+{"level":"error","message":"Usuario Existente"}
+{"level":"error","message":"Usuario Existente"}
+{"level":"error","message":"Usuario Existente"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"warn","message":"ruta /put/5, método GET no implementada"}
+{"level":"error","message":"Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer"}
+{"level":"error","message":"Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer"}
+{"level":"error","message":"Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer"}
+{"level":"error","message":"Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer"}
+{"level":"error","message":"Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer"}
+{"level":"error","message":"Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer"}
+{"level":"error","message":"El Id ingresado no corresponde a un producto existente"}
+{"level":"error","message":"El Id ingresado es invalido"}
+{"level":"error","message":"El Id ingresado es invalido"}
+{"level":"error","message":"El Id ingresado es invalido"}
+{"level":"error","message":"El Id ingresado es invalido"}
+{"level":"error","message":"El Id ingresado no corresponde a un producto existente"}
+{"level":"error","message":"El Id ingresado no corresponde a un producto existente"}
+{"level":"error","message":"El Id ingresado no corresponde a un producto existente"}
+{"level":"error","message":"El Id ingresado no corresponde a un producto existente"}
+{"level":"error","message":"Debe ingresar una cantidad de productos a comprar"}
+{"level":"error","message":"Debe ingresar una cantidad valida de productos a comprar"}
+{"level":"error","message":"Debe ingresar una cantidad valida de productos a comprar"}
+{"level":"error","message":"Debe ingresar una cantidad valida de productos a comprar"}
+{"level":"error","message":"No puede agregar un producto que ya esta en el carrito"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'total_Price')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'total_Price')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'total_Price')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'total_Price')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'total_Price')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'total_Price')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'items')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'items')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'items')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'items')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'items')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'items')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'items')"}
+{"level":"error","message":"No puede agregar un producto que ya esta en el carrito"}

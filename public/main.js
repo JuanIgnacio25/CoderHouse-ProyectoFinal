@@ -3,13 +3,15 @@ const socket = io();
 const sendMessage = (e) => {
     const message = document.getElementById('message').value;
     const email = document.getElementById('email').value
-    const newMessage = {message,email};
-    socket.emit('new_message',newMessage);
+    const newMessage = { message, email };
+    if (message !== '') {
+        socket.emit('new_message', newMessage);
+    }
     return false;
 }
 
 const createMessageTag = (messageInfo) => {
-    const { email,message,time_Stamp } = messageInfo;
+    const { email, message, time_Stamp } = messageInfo;
     return `
     <div>
         <strong style='color:blue'>${email}</strong>
@@ -26,4 +28,4 @@ const addMessages = (message) => {
     }
 }
 
-socket.on('messages',(messages) => addMessages(messages));
+socket.on('messages', (messages) => addMessages(messages));

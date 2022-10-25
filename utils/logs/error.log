@@ -1,2 +1,46 @@
-{"level":"error"}
-{"level":"error","message":"Error: Error: Cannot find module 'ejs'\nRequire stack:\n- D:\\DiscoRigido\\Documentos\\Documentos de Programacion\\VscoProjects\\CoderHouse\\CoderHouse-ProyectoFinal\\node_modules\\express\\lib\\view.js\n- D:\\DiscoRigido\\Documentos\\Documentos de Programacion\\VscoProjects\\CoderHouse\\CoderHouse-ProyectoFinal\\node_modules\\express\\lib\\application.js\n- D:\\DiscoRigido\\Documentos\\Documentos de Programacion\\VscoProjects\\CoderHouse\\CoderHouse-ProyectoFinal\\node_modules\\express\\lib\\express.js\n- D:\\DiscoRigido\\Documentos\\Documentos de Programacion\\VscoProjects\\CoderHouse\\CoderHouse-ProyectoFinal\\node_modules\\express\\index.js\n- D:\\DiscoRigido\\Documentos\\Documentos de Programacion\\VscoProjects\\CoderHouse\\CoderHouse-ProyectoFinal\\server.js"}
+{"level":"error","message":"Usuario Existente"}
+{"level":"error","message":"Usuario Existente"}
+{"level":"error","message":"Usuario Existente"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer"}
+{"level":"error","message":"Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer"}
+{"level":"error","message":"Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer"}
+{"level":"error","message":"Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer"}
+{"level":"error","message":"Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer"}
+{"level":"error","message":"Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer"}
+{"level":"error","message":"El Id ingresado no corresponde a un producto existente"}
+{"level":"error","message":"El Id ingresado es invalido"}
+{"level":"error","message":"El Id ingresado es invalido"}
+{"level":"error","message":"El Id ingresado es invalido"}
+{"level":"error","message":"El Id ingresado es invalido"}
+{"level":"error","message":"El Id ingresado no corresponde a un producto existente"}
+{"level":"error","message":"El Id ingresado no corresponde a un producto existente"}
+{"level":"error","message":"El Id ingresado no corresponde a un producto existente"}
+{"level":"error","message":"El Id ingresado no corresponde a un producto existente"}
+{"level":"error","message":"Debe ingresar una cantidad de productos a comprar"}
+{"level":"error","message":"Debe ingresar una cantidad valida de productos a comprar"}
+{"level":"error","message":"Debe ingresar una cantidad valida de productos a comprar"}
+{"level":"error","message":"Debe ingresar una cantidad valida de productos a comprar"}
+{"level":"error","message":"No puede agregar un producto que ya esta en el carrito"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'total_Price')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'total_Price')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'total_Price')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'total_Price')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'total_Price')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'total_Price')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'items')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'items')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'items')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'items')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'items')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'items')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'items')"}
+{"level":"error","message":"No puede agregar un producto que ya esta en el carrito"}

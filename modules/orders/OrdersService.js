@@ -2,6 +2,7 @@ const { CartService } = require("../cart/CartService");
 const { OrdersDaoFactory } = require("./persistence/ordersDaoFactory")
 const {sendEmailNewOrder} = require('../../utils/nodemailer');
 const { UserService } = require("../user/UserService");
+const {logger} = require('../../utils/logger');
 
 class OrdersService {
     constructor(type) {

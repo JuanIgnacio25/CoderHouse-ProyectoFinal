@@ -1,5 +1,6 @@
 const { ProductService } = require("../products/ProductService");
 const { CartDaoFactory } = require("./persistence/cartDaoFactory");
+const { logger } = require('../../utils/logger');
 
 class CartService {
     constructor(type) {
@@ -7,63 +8,92 @@ class CartService {
         this.productService = new ProductService(process.env.NODE_ENV);
     }
 
-    async createCart(email, delivery_Address) {
-        let cartToCreate = {
-            email: email,
-            delivery_Address: delivery_Address,
-            items: [],
-            time_Stamp: new Date().toISOString(),
-            total_Price: 0
+
+
+    async checkExistingProductInCart(cart_Id,product_Id){
+        try {
+            const cart = await this.getCartById(cart_Id);
+            if(!cart) throw new Error('El carrito no existe');
+            const find = cart.items.find((item)=> item.id == product_Id);
+            if(find)throw new Error('No puede agregar un producto que ya esta en el carrito');
+            return cart;
+        } catch (error) {
+            throw error
         }
-        const idCart = await this.dao.createCart(cartToCreate);
-        return idCart;
+    }
+
+    async createCart(email, delivery_Address) {
+        try {
+            let cartToCreate = {
+                email: email,
+                delivery_Address: delivery_Address,
+                items: [],
+                time_Stamp: new Date().toISOString(),
+                total_Price: 0
+            }
+            const idCart = await this.dao.createCart(cartToCreate);
+            return idCart;
+        } catch (error) {
+            throw error
+        }
+
     }
 
     async getAllCarts() {
-        return await this.dao.getAllCarts();
+        try {
+            return await this.dao.getAllCarts();
+        } catch (error) {
+            throw error;
+        }
+
     }
 
     async getCartById(id) {
         try {
             return (await this.dao.getCartById(id))[0];
         } catch (error) {
-            console.log(error);
+            throw error;
         }
     }
 
     async addProductToCart(cart_Id, product_Id, quantity) {
         try {
+            const cartToUpdate = await this.checkExistingProductInCart(cart_Id,product_Id);
             const product = await this.productService.getProductsById(product_Id);
+            if (!product) throw new Error('El producto no existe');
+            if (quantity === undefined || quantity === '' || quantity == 0 || quantity < 0) throw new Error('Debe ingresar una cantidad valida de productos a comprar');
             const { _id, id, title, price, category, description, thumbnail } = product
             const productToAdd = {
-                _id ,id, title, price, category, description, thumbnail,quantity
+                _id, id, title, price, category, description, thumbnail, quantity
             }
-            const cartToUpdate = await this.getCartById(cart_Id);
             cartToUpdate.items.push(productToAdd);
             cartToUpdate.total_Price = (cartToUpdate.items.reduce((accum, item) => accum += item.price * item.quantity, 0)).toFixed(2);
             await this.dao.updateCart(cart_Id, cartToUpdate);
         } catch (error) {
             console.log(error);
+            throw error;
+         
         }
     }
 
-    async removeProductFromCartById(product_Id,cart_Id) {
+    async removeProductFromCartById(product_Id, cart_Id) {
         try {
             const cart = await this.getCartById(cart_Id);
+            if(!cart) throw new Error('El Carrito no existe');
             const modifiedItems = cart.items.filter((item) => item.id != parseInt(product_Id));
             cart.items = modifiedItems;
             cart.total_Price = (cart.items.reduce((accum, item) => accum += item.price * item.quantity, 0)).toFixed(2);
-            return await this.dao.updateCart(cart_Id,cart);
+            return await this.dao.updateCart(cart_Id, cart);
         } catch (error) {
-            console.log(error);
+            throw error;
         }
     }
 
-    async deleteCartById(id){
+    async deleteCartById(id) {
         try {
             return await this.dao.deleteById(id);
         } catch (error) {
-            console.log(error);
+            throw error;
         }
     }
 }
