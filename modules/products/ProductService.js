@@ -1,4 +1,4 @@
-const { ProductDaoFactory } = require("./persistence/productDaoFactory");
+const { ProductDaoFactory } = require("./persistence/ProductDaoFactory");
 const mongoose = require('mongoose');
 
 class ProductService {

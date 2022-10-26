@@ -1,8 +1,7 @@
 const { CartService } = require("../cart/CartService");
-const { OrdersDaoFactory } = require("./persistence/ordersDaoFactory")
-const {sendEmailNewOrder} = require('../../utils/nodemailer');
+const { OrdersDaoFactory } = require("./persistence/OrdersDaoFactory")
+const { sendEmailNewOrder } = require('../../utils/nodemailer');
 const { UserService } = require("../user/UserService");
-const {logger} = require('../../utils/logger');
 
 class OrdersService {
     constructor(type) {
@@ -11,9 +10,10 @@ class OrdersService {
         this.userService = new UserService(process.env.NODE_ENV);
     }
 
-    async createNewOrder(user){
+    async createNewOrder(user) {
         try {
             const cart = await this.cartService.getCartById(user.cart_Id);
+            if (cart.total_Price === 0) throw new Error('No puede completar la compra de un carrito vacio')
             const order = {
                 email: user.email,
                 items: cart.items,
@@ -23,16 +23,15 @@ class OrdersService {
                 total_Price: cart.total_Price
             }
             const createOrder = await this.dao.createNewOrder(order);
-            if(createOrder){
-                await this.cartService.deleteCartById(user.cart_Id);
-                const newCartId = await this.cartService.createCart(user.email,user.address);
-                await this.userService.updateCartId(user.id,newCartId);
-                sendEmailNewOrder(process.env.ADMIN_EMAIL, process.env.RECEIVER_EMAIL, order);
-            }
-            return createOrder.id;
-            
+            if(!createOrder)throw new Error('Error al crear la orden');
+            await this.cartService.deleteCartById(user.cart_Id);
+            const newCartId = await this.cartService.createCart(user.email, user.address);
+            await this.userService.updateCartId(user.id, newCartId);
+            sendEmailNewOrder(process.env.ADMIN_EMAIL, process.env.RECEIVER_EMAIL, order);
+            return newCartId;
+
         } catch (error) {
-            console.log(error);
+            throw error;
         }
     }
 }

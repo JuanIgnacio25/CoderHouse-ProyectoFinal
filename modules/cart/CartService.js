@@ -1,6 +1,5 @@
 const { ProductService } = require("../products/ProductService");
-const { CartDaoFactory } = require("./persistence/cartDaoFactory");
-const { logger } = require('../../utils/logger');
+const { CartDaoFactory } = require("./persistence/CartDaoFactory");
 
 class CartService {
     constructor(type) {

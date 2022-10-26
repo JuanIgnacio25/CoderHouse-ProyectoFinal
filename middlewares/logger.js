@@ -7,11 +7,9 @@ const info = (req, res, next) => {
 
 
 const errorRoute = (req, res, next) => {
-    logger.warn(`ruta ${req.url}, método ${req.method} no implementada`)
-    res.status(404).send({
-        error: 404,
-        descripción: `ruta ${req.url}, método ${req.method} no implementada`
-    })
+    const error = `404 ruta ${req.url}, método ${req.method} no implementada`
+    logger.warn(error);
+    res.status(404).render('error',{error:error});
 }
 
 const catchError = (error, req, res, next) => {

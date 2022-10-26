@@ -1,5 +1,5 @@
-const {ProductDaoMongoAtlas} = require('./daos/productDaoMongoAtlas');
-const { ProductDaoMongoDB } = require('./daos/productDaoMongoDB');
+const {ProductDaoMongoAtlas} = require('./daos/ProductDaoMongoAtlas');
+const { ProductDaoMongoDB } = require('./daos/ProductDaoMongoDB');
 
 class ProductDaoFactory {
     getDao(type) {

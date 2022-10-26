@@ -67,7 +67,7 @@ class UserDaoMongoAtlas {
 
     async updateCartId(user_Id, newCart_Id) {
         try {
-            const result = await this.collection.updateOne({ id: user_Id }, { set: { cart_Id: newCart_Id } });
+            const result = await this.collection.updateOne({ id: user_Id }, { $set: { cart_Id: newCart_Id } });
             return result
         } catch (error) {
             throw error;

@@ -44,3 +44,32 @@
 {"level":"error","message":"Cannot read properties of undefined (reading 'items')"}
 {"level":"error","message":"Cannot read properties of undefined (reading 'items')"}
 {"level":"error","message":"No puede agregar un producto que ya esta en el carrito"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'total_Price')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'total_Price')"}
+{"level":"error","message":"No puede completar la compra de un carrito vacio"}
+{"level":"error","message":"No puede agregar un producto que ya esta en el carrito"}
+{"level":"error","message":"No puede agregar un producto que ya esta en el carrito"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'total_Price')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'total_Price')"}
+{"level":"error","message":"No puede completar la compra de un carrito vacio"}
+{"level":"error","message":"newCartId is not defined"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'total_Price')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'total_Price')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'total_Price')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'total_Price')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'total_Price')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'total_Price')"}
+{"level":"error","message":"user is not defined"}
+{"level":"error","message":"user is not defined"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'total_Price')"}
+{"level":"error","message":"No puede completar la compra de un carrito vacio"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'total_Price')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'total_Price')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'total_Price')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'total_Price')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'total_Price')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'total_Price')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'total_Price')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'total_Price')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'total_Price')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'total_Price')"}

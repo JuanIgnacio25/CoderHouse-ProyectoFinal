@@ -1,4 +1,4 @@
-const { OrdersDaoMongoAtlas } = require("./daos/ordersDaoMongoAtlas")
+const { OrdersDaoMongoAtlas } = require("./daos/OrdersDaoMongoAtlas")
 
 class OrdersDaoFactory {
 
