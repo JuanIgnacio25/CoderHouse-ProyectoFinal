@@ -160,3 +160,5 @@
 {"level":"warn","message":"404 ruta /fads, método GET no implementada"}
 {"level":"warn","message":"404 ruta /fads, método GET no implementada"}
 {"level":"warn","message":"404 ruta /lgfsd, método GET no implementada"}
+{"level":"warn","message":"404 ruta /docs/5.3/assets/brand/bootstrap-logo.svg, método GET no implementada"}
+{"level":"warn","message":"404 ruta /docs/5.3/assets/brand/bootstrap-logo.svg, método GET no implementada"}

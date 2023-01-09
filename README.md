@@ -1,6 +1,6 @@
 # CoderHouse-ProyectoFinal
 ### Descripcion del proyecto
-El proyecto final consta de un Back-end para e-commerce desarrollado en Node.js con Express.js como framework de desarrollo web incluyendo un pequeño front diseñado con un motor de plantillas(Handlebars).
+El proyecto final consta de un Back-end para e-commerce desarrollado en Node.js con Express.js como framework de desarrollo web incluyendo un pequeño front diseñado con Bootstrap y Handlebars.
 
 En el mismo se podra acceder a un registro de usuario y un login.
 El usuario tendra acceso a una vista de productos , un carrito propio y un chat general
