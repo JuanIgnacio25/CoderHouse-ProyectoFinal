@@ -1,73 +1,78 @@
-<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <img src="https://cdn0.iconfinder.com/data/icons/website-15/512/web-online-05-256.png" alt="Logo" width="36" height="30"
-                class="d-inline-block align-text-top">
-            E-commerce
-        </a>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/productos">Products</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/carrito">Cart</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/chat">Chat</a>
-                </li>
-                <li>
-                    <a class="nav-link active" aria-current="page" href="/logout">Logout</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled">Disabled</a>
-                </li>
-            </ul>
+<body class="bg-info">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse justify-content-md-center" id="navbarNav">
+                <a class="navbar-brand" href="#">
+                    <img src="https://cdn0.iconfinder.com/data/icons/website-15/512/web-online-05-256.png" alt="Logo"
+                        width="40" height="34" class="d-inline-block align-text-top">
+                </a>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/productos">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/carrito">Cart</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/chat">Chat</a>
+                    </li>
+                    <li>
+                        <a class="nav-link active" aria-current="page" href="/logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-
-        <span class="navbar-text">
-            We have the products you need!!
-        </span>
+    </nav>
+    <h1>Cart</h1>
+    <div>
+        {{#if products}}
+        <table>
+            <thead>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Thumbnail</th>
+                <th>Quantity</th>
+                <th></th>
+            </thead>
+            <tbody>
+                {{#each products}}
+                <tr>
+                    <td>{{this.title}}</td>
+                    <td>{{this.price}}</td>
+                    <td>{{this.category}}</td>
+                    <td>{{this.description}}</td>
+                    <td><img style="width: 50px; height:50px" src={{this.thumbnail}}></td>
+                    <td>{{this.quantity}}</td>
+                    <td>
+                        <form action="/carrito/delete/{{this.id}}" method="POST">
+                            <input type="submit" value="Remove From Cart">
+                        </form>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        {{else}}
+        <h2>No hay productos en el carrito</h2>
+        {{/if}}
     </div>
-</nav>
-<h1>Cart</h1>
-<div>
-    {{#if products}}
-    <table>
-        <thead>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Category</th>
-            <th>Description</th>
-            <th>Thumbnail</th>
-            <th>Quantity</th>
-            <th></th>
-        </thead>
-        <tbody>
-            {{#each products}}
-            <tr>
-                <td>{{this.title}}</td>
-                <td>{{this.price}}</td>
-                <td>{{this.category}}</td>
-                <td>{{this.description}}</td>
-                <td><img style="width: 50px; height:50px" src={{this.thumbnail}}></td>
-                <td>{{this.quantity}}</td>
-                <td>
-                    <form action="/carrito/delete/{{this.id}}" method="POST">
-                        <input type="submit" value="Remove From Cart">
-                    </form>
-                </td>
-            </tr>
-            {{/each}}
-        </tbody>
-    </table>
-    {{else}}
-    <h2>No hay productos en el carrito</h2>
-    {{/if}}
-</div>
 
-<h2>Total Price ${{this.total_Price}}</h2>
+    <h2>Total Price ${{this.total_Price}}</h2>
 
-<form action="/ordenes/buy" method="POST">
-    <input type="submit" value="Complete the Purchase">
-</form>
+    <form action="/ordenes/buy" method="POST">
+        <input type="submit" value="Complete the Purchase">
+    </form>
+
+    <hr class="featurette-divider mt-3">
+
+    <footer class="d-flex justify-content-center ">
+        <p>© 2023 Juan Ignacio Colli · <a href="https://github.com/JuanIgnacio25" target="_blank"><img
+                    src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-social-github-64.png"
+                    alt="google-icon" style="height: 1.6rem"></a> · <a
+                href="https://www.linkedin.com/in/juan-ignacio-colli-317696218/" target="_blank"><img
+                    src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/linkedin-64.png" alt="google-icon"
+                    style="height: 1.6rem"></a></p>
+    </footer>
+</body>
