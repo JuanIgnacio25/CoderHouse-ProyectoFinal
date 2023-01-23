@@ -38,6 +38,17 @@ class ProductController {
         }
     }
 
+    async getProductById(req, res) {
+        try {
+            const id = req.params.id;
+            const productById = await productService.getProductsById(id);
+            res.status(200).render('productProfile', { product: productById });
+        } catch (error) {
+            logger.error(error.message);
+            res.render('error', { error: error.message});
+        }
+    }
+
     async getByCategory(req, res) {
         try {
             const category = req.params.categoria;

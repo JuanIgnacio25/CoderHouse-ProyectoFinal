@@ -162,3 +162,6 @@
 {"level":"warn","message":"404 ruta /lgfsd, método GET no implementada"}
 {"level":"warn","message":"404 ruta /docs/5.3/assets/brand/bootstrap-logo.svg, método GET no implementada"}
 {"level":"warn","message":"404 ruta /docs/5.3/assets/brand/bootstrap-logo.svg, método GET no implementada"}
+{"level":"error","message":"No puede agregar un producto que ya esta en el carrito"}
+{"level":"error","message":"Cast to Number failed for value \"{ id: '1' }\" (type Object) at path \"id\" for model \"productos\""}
+{"level":"error","message":"Cast to Number failed for value \"{ id: '1' }\" (type Object) at path \"id\" for model \"productos\""}
