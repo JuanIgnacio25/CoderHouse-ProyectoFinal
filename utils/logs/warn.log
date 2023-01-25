@@ -165,3 +165,4 @@
 {"level":"error","message":"No puede agregar un producto que ya esta en el carrito"}
 {"level":"error","message":"Cast to Number failed for value \"{ id: '1' }\" (type Object) at path \"id\" for model \"productos\""}
 {"level":"error","message":"Cast to Number failed for value \"{ id: '1' }\" (type Object) at path \"id\" for model \"productos\""}
+{"level":"warn","message":"404 ruta /productos/styles/card.css, método GET no implementada"}

@@ -4,30 +4,29 @@
 </head>
 
 <body class="bg-info">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid ">
-            <div class="collapse navbar-collapse justify-content-md-center" id="navbarNav">
-                <a class="navbar-brand " href="#">
+    <header class="p-3 bg-dark text-white">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
                     <img src="https://cdn0.iconfinder.com/data/icons/website-15/512/web-online-05-256.png" alt="Logo"
                         width="40" height="34" class="d-inline-block align-text-top">
                 </a>
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/productos">Products</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/carrito">Cart</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/chat/{{this.email}}">Your Messages</a>
-                    </li>
-                    <li>
-                        <a class="nav-link active" aria-current="page" href="/logout">Logout</a>
-                    </li>
+
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="/productos" class="nav-link px-2 text-info">Ecommerce</a></li>
+                    <li><a href="/productos" class="nav-link px-2 text-white">Products</a></li>
+                    <li><a href="/carrito" class="nav-link px-2 text-white">Cart</a></li>
+                    <li><a href="/chat/{{this.email}}" class="nav-link px-2 text-white">Own Messages</a></li>
                 </ul>
+
+                <div class="text-end">
+                    <a href="/logout" class="btn btn-outline-light me-2">Logout</a>
+                    <!--<button type="button" class="btn btn-warning">Sign-up</button>-->
+                </div>
             </div>
         </div>
-    </nav>
+    </header>
+
 
     <h1>Chat</h1>
     <form onsubmit="return sendMessage()">
