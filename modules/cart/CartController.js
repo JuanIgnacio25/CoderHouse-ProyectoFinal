@@ -45,6 +45,7 @@ class CartController {
             const cart_Id = req.user.cart_Id;
             const product_Id = req.params.id;
             const quantity = req.body.quantity;
+            console.log(quantity);
             await cartService.addProductToCart(cart_Id, product_Id, quantity);
             res.redirect('/carrito');
         } catch (error) {

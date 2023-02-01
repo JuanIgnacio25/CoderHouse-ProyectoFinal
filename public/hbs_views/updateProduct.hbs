@@ -22,6 +22,70 @@
         </div>
     </header>
 
+    <div class="d-flex justify-content-center align-items-center vh-100">
+        <div class="bg-white p-5 rounded-5 text-dark shadow" style="width:40rem">
+
+            <div class="text-center fs-1 fw-bold">Update Product</div>
+            <form action="/productos/put/{{id}}" method="POST">
+                <!-- Title input -->
+                <div class="input-group mt-4">
+                    <div class="input-group-text bg-info">
+                        <img src="https://cdn3.iconfinder.com/data/icons/seo-and-marketing-4-12/48/184-256.png"
+                            alt="title-icon" style="height:  1.5rem">
+                    </div>
+                    <input class="form-control bg-light" type="text" placeholder="Title" name="title" />
+                </div>
+
+                
+                <div class="input-group mt-4">
+                    <div class="input-group-text bg-info">
+                        <img src="https://cdn2.iconfinder.com/data/icons/picol-vector/32/image_add-256.png"
+                            alt="thumbnail-icon" style="height:  1.5rem">
+                    </div>
+                    <input type="text" placeholder="Thumbnail" name="thumbnail" class="form-control bg-light" />
+                </div>
+
+                <div class="input-group mt-4">
+                    <div class="input-group-text bg-info">
+                        <img src="https://cdn2.iconfinder.com/data/icons/money-coin-finance-solid-style/91/Money_Coin_Finance_b01-256.png"
+                            alt="price-icon" style="height:  1.5rem">
+                    </div>
+                    <input type="text" placeholder="Price" name="price" class="form-control bg-light" />
+                </div>
+
+                <div class="input-group mt-4">
+                    <div class="input-group-text bg-info">
+                        <img src="https://cdn2.iconfinder.com/data/icons/boxicons-solid-vol-1/24/bxs-category-256.png"
+                            alt="category-icon" style="height:  1.5rem">
+                    </div>
+                    <select class="form-select bg-light" name="category" type="text">
+                        <option selected="">Category</option>
+                        <option value="Computation">Computation</option>
+                        <option value="Bazar">Bazar</option>
+                        <option value="Varios">Varios</option>
+                    </select>
+                </div>
+
+                <div class="input-group mt-4">
+                    <div class="input-group-text bg-info">
+                        <img src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_description_48px-256.png"
+                            alt="description-icon" style="height:  1.5rem">
+                    </div>
+                    <textarea type="text" placeholder="Description" name="description"
+                        class="form-control bg-light"></textarea>
+
+                </div>
+
+                <!-- Submit button -->
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-info w-50 mt-3 fw-semibold shadow-sm">Update</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
     <hr class="featurette-divider mt-3">
 
     <footer class="d-flex justify-content-center ">

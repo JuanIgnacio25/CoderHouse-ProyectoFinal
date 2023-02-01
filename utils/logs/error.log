@@ -76,3 +76,46 @@
 {"level":"error","message":"No puede agregar un producto que ya esta en el carrito"}
 {"level":"error","message":"Cast to Number failed for value \"{ id: '1' }\" (type Object) at path \"id\" for model \"productos\""}
 {"level":"error","message":"Cast to Number failed for value \"{ id: '1' }\" (type Object) at path \"id\" for model \"productos\""}
+{"level":"error","message":"No puede agregar un producto que ya esta en el carrito"}
+{"level":"error","message":"Debe ingresar una cantidad valida de productos a comprar"}
+{"level":"error","message":"Debe ingresar una cantidad valida de productos a comprar"}
+{"level":"error","message":"Debe ingresar una cantidad valida de productos a comprar"}
+{"level":"error","message":"Cast to Number failed for value \"alt=\"category-icon\"\" (type string) at path \"id\" for model \"productos\""}
+{"level":"error","message":"No puede agregar un producto que ya esta en el carrito"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Unexpected token 7 in JSON at position 0"}
+{"level":"error","message":"Unexpected token 7 in JSON at position 0"}
+{"level":"error","message":"Unexpected token 7 in JSON at position 0"}
+{"level":"error","message":"Cast to Number failed for value \"NaN\" (type number) at path \"id\" for model \"productos\""}
+{"level":"error","message":"Cast to Number failed for value \"NaN\" (type number) at path \"id\" for model \"productos\""}
+{"level":"error","message":"Cast to Number failed for value \"NaN\" (type number) at path \"id\" for model \"productos\""}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"error","message":"Algun campo esta vacio o es invalido"}

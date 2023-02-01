@@ -85,7 +85,7 @@ class ProductController {
 
     async deleteProductById(req, res) {
         try {
-            const id = Number(req.params.id);
+            const id = Number(req.body.id);
             await productService.deleteProductById(id);
             res.status(200).redirect('/productos');
         } catch (error) {
