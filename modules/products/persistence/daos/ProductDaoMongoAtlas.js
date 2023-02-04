@@ -84,7 +84,7 @@ class ProductDaoMongoAtlas {
 
     async updateProductById(id, product) {
         try {
-            const updateProduct = await this.collection.updateOne({ id: id }, { $set: { title: product.title, price: product.price, code: product.code, description: product.description, stock: product.stock } });;
+            const updateProduct = await this.collection.updateOne({ id: id }, { $set: { title: product.title, price: product.price, description: product.description, thumbnail: product.thumbnail } });;
             return updateProduct;
         } catch (error) {
             throw error;

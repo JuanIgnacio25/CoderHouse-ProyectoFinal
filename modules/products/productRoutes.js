@@ -8,6 +8,7 @@ productRouter.get('/categoria/:categoria', authenticateToken, productController.
 productRouter.get('/id/:id', authenticateToken, productController.getProduct);
 productRouter.get('/put/:id', authenticateToken, isAdmin, productController.handlerUpdate);
 productRouter.get('/id_prod/:id', authenticateToken, productController.getProductById);
+productRouter.get('/add',authenticateToken,productController.getFormAdd);
 
 productRouter.post('/', authenticateToken, isAdmin, productController.createProduct);
 

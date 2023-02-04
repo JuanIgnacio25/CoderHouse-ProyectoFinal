@@ -28,7 +28,7 @@
             <div class="row">
                 <div class="col">
                     {{#if products}}
-                    <table class="table align-middle table-dark table-striped table-hover">
+                    <table class="table align-middle table-dark table-striped">
                         <thead>
                             <tr>
                                 <th scope="col">Name</th>
@@ -51,8 +51,8 @@
                                 <td>{{this.quantity}}</td>
                                 <td>
                                     <form action="/carrito/delete/{{this.id}}" method="POST">
-                                        <input type="submit" value="Remove From Cart"
-                                            class="btn btn-info w-100 mt-2 fw-semibold shadow-sm">
+                                        <input type="submit" value="Remove"
+                                            class="btn btn-info btn-sm w-100 mt-2 fw-semibold shadow-sm">
                                     </form>
                                 </td>
                             </tr>
@@ -66,11 +66,21 @@
             </div>
         </div>
 
-        <h2>Total Price ${{this.total_Price}}</h2>
+        <div class="container">
+            <div class="d-flex justify-content-end">
+                <h4>Total Price ${{this.total_Price}}</h4>
+            </div>
 
-        <form action="/ordenes/buy" method="POST">
-            <input type="submit" value="Complete the Purchase">
-        </form>
+            <div class="d-flex justify-content-end">
+                <form action="/ordenes/buy" method="POST">
+                    <input class="btn btn-dark btn-sm w-100 mt-2 fw-semibold shadow-sm" type="submit" value="Complete the Purchase">
+                </form>
+            </div>
+
+
+
+        </div>
+
 
         <hr class="featurette-divider mt-3">
 

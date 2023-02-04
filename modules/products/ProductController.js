@@ -15,6 +15,14 @@ class ProductController {
         }
     }
 
+    async getFormAdd(req,res) {
+        try {
+            res.render('addProduct');
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     async getAllProducts(req, res) {
         try {
             const products = await productService.getProducts();

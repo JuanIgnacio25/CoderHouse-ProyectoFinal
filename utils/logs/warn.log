@@ -211,3 +211,6 @@
 {"level":"error","message":"Algun campo esta vacio o es invalido"}
 {"level":"error","message":"Algun campo esta vacio o es invalido"}
 {"level":"error","message":"Algun campo esta vacio o es invalido"}
+{"level":"warn","message":"404 ruta /productos/addProduct, método GET no implementada"}
+{"level":"warn","message":"404 ruta /productos/add, método GET no implementada"}
+{"level":"warn","message":"404 ruta /products/add, método GET no implementada"}
