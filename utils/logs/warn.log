@@ -214,3 +214,5 @@
 {"level":"warn","message":"404 ruta /productos/addProduct, método GET no implementada"}
 {"level":"warn","message":"404 ruta /productos/add, método GET no implementada"}
 {"level":"warn","message":"404 ruta /products/add, método GET no implementada"}
+{"level":"error","message":"Cast to Number failed for value \"style=\"height:\" (type string) at path \"id\" for model \"productos\""}
+{"level":"warn","message":"404 ruta /productos/put/, método POST no implementada"}
