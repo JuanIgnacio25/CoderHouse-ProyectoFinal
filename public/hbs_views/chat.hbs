@@ -16,7 +16,7 @@
                     <li><a href="/productos" class="nav-link px-2 text-info">Ecommerce</a></li>
                     <li><a href="/productos" class="nav-link px-2 text-white">Products</a></li>
                     <li><a href="/carrito" class="nav-link px-2 text-white">Cart</a></li>
-                    <li><a href="/chat/{{this.email}}" class="nav-link px-2 text-white">Own Messages</a></li>
+                    <li><a href="/chat/" class="nav-link px-2 text-white">Chat</a></li>
                 </ul>
 
                 <div class="text-end">
@@ -29,7 +29,7 @@
 
     <div class="container">
         <div class="d-flex justify-content-center">
-            <h1>Chat</h1>
+            <h1 class="text-center fs-1 fw-bold">Chat</h1>
         </div>
 
         <div class="d-flex Justify-content-center">
@@ -42,7 +42,7 @@
 
     </div>
 
-    <div class="container">
+    <div class="container py-5">
         <div class="d-flex justify-content-center align-items-center vh-100">
             <div class="bg-white p-5 rounded-5 text-dark shadow" style="width:35rem">
 
@@ -61,19 +61,22 @@
                     </div>
 
                     <div class="d-flex justify-content-center">
-                        <button type="submit" class="btn btn-dark w-50 mt-3 fw-semibold shadow-sm">Send Message</button>
+                        <button type="submit" class="btn btn-dark w-50 mt-3 fw-semibold shadow-sm"
+                            value="Enviar Mensaje">Send Message</button>
                     </div>
                 </form>
-            </div>
 
-            <div id="messages"></div>
+                <div id="messages" class="text-center"></div>
+            </div>
 
         </div>
 
     </div>
 
+    <div class="container">
+        <hr class="featurette-divider pt-2">
+    </div>
 
-    <hr class="featurette-divider mt-3">
 
     <footer class="d-flex justify-content-center ">
         <p>© 2023 Juan Ignacio Colli · <a href="https://github.com/JuanIgnacio25" target="_blank"><img

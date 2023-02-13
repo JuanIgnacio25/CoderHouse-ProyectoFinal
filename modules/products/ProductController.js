@@ -15,7 +15,7 @@ class ProductController {
         }
     }
 
-    async getFormAdd(req,res) {
+    async getFormAdd(req, res) {
         try {
             res.render('addProduct');
         } catch (error) {
@@ -27,8 +27,7 @@ class ProductController {
         try {
             const products = await productService.getProducts();
             const isAdmin = req.user.admin;
-            if (!isAdmin) res.status(200).render('products', { products: products });
-            else res.status(200).render('productsAndForm', { isAdmin, products: products });
+            res.status(200).render('products', { isAdmin, products: products });
         } catch (error) {
             logger.error(error.message);
             res.render('error', { error: error.message });
@@ -53,7 +52,7 @@ class ProductController {
             res.status(200).render('productProfile', { product: productById });
         } catch (error) {
             logger.error(error.message);
-            res.render('error', { error: error.message});
+            res.render('error', { error: error.message });
         }
     }
 
