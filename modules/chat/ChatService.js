@@ -1,20 +1,22 @@
 const { ChatDaoFactory } = require("./persistence/ChatDaoFactory");
 
-class ChatService{
-    constructor(type){
+class ChatService {
+    constructor(type) {
         this.dao = new ChatDaoFactory().getDao(type);
     }
 
-    async addMessage(message){
+    async addMessage(message) {
         try {
-            message.time_Stamp = new Date().toISOString();
+            const day = new Date().toLocaleDateString();
+            const hour = new Date().toLocaleTimeString().slice(0, 5);
+            message.time_Stamp = `${hour} `.concat(day);
             return await this.dao.addMessage(message);
         } catch (error) {
             console.log(error);
         }
     }
 
-    async getAllMessages(){
+    async getAllMessages() {
         try {
             return await this.dao.getAllMessages();
         } catch (error) {
@@ -22,7 +24,7 @@ class ChatService{
         }
     }
 
-    async getMessagesByEmail(email){
+    async getMessagesByEmail(email) {
         try {
             return await this.dao.getMessagesByEmail(email);
         } catch (error) {

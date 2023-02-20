@@ -28,6 +28,7 @@
     <div class="d-flex py-5 justify-content-center">
         <div class="card" style="border-radius: 20px; width: 485px;">
             <div class="mt-2" data-mdb-ripple-color="light">
+                {{#if isAdmin}}
                 <div class="d-flex justify-content-end">
                     <form action="/productos/put/{{product.id}}" method="get">
                         <input src="https://cdn0.iconfinder.com/data/icons/zondicons/20/wrench-256.png"
@@ -38,6 +39,7 @@
                         alt="garbageCan-icon" style="height:  1.5rem" type="image"
                         onclick="confirmDelete({{product.id}})">
                 </div>
+                {{/if}}
 
                 <div class="d-flex justify-content-center">
                     <img src={{product.thumbnail}} style="height: 10rem" class="img-fluid" alt="Product" />
@@ -81,36 +83,20 @@
                 </div>
             </div>
             <div class="card-body">
-                <!--<div class="d-flex justify-content-center pb-2">
-                            <select class="form-select form-select-sm mb-3" aria-label=".form-select-lg example">
-                                <option selected>Open this select menu</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                        </div>-->
                 <form method="POST" action="/carrito/{{product.id}}">
                     <div class="d-flex justify-content-center">
                         <select class="form-select-bg-size form-select-sm" aria-label=".form-select-lg example"
                             name="quantity">
-                            <option selected>Quantity</option>
-                            <option value="1">1 unit</option>
+                            <option selected value="1">1 unit</option>
                             <option value="2">2 unit</option>
                             <option value="3">3 unit</option>
+                            <option value="4">4 unit</option>
                         </select>
                     </div>
                     <div class="d-flex justify-content-center pb-2 mb-1 mt-2">
                         <button type="submit" class="btn btn-info">Add to Cart</button>
                     </div>
                 </form>
-
-                <!--<div class="d-flex justify-content-center  pb-2 mb-1">
-                            <button type="button" class="btn btn-primary">Delete</button>
-                        </div>
-
-                        <div class="d-flex justify-content-center  pb-2 mb-1">
-                            <button type="button" class="btn btn-primary">Update</button>
-                        </div>-->
             </div>
         </div>
     </div>

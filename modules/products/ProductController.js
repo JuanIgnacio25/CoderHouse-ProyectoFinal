@@ -47,9 +47,10 @@ class ProductController {
 
     async getProductById(req, res) {
         try {
+            const isAdmin = req.user.admin;
             const id = req.params.id;
             const productById = await productService.getProductsById(id);
-            res.status(200).render('productProfile', { product: productById });
+            res.status(200).render('productProfile', { product: productById, isAdmin });
         } catch (error) {
             logger.error(error.message);
             res.render('error', { error: error.message });
