@@ -239,3 +239,4 @@
 {"level":"error","message":"Algun campo esta vacio o es invalido"}
 {"level":"error","message":"Algun campo esta vacio o es invalido"}
 {"level":"error","message":"No puede agregar un producto que ya esta en el carrito"}
+{"level":"error","message":"No puede agregar un producto que ya esta en el carrito"}
