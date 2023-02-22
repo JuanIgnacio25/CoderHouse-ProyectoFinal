@@ -2,7 +2,7 @@
 
 FROM node:16
 
-WORKDIR /app
+WORKDIR /
 
 COPY ["package.json", "package-lock.json*", "./"]
 
