@@ -1,6 +1,7 @@
 const { ProductService } = require("./ProductService")
 const productService = new ProductService(process.env.NODE_ENV);
 const { logger } = require('../../utils/logger');
+
 class ProductController {
 
     async handlerUpdate(req, res) {

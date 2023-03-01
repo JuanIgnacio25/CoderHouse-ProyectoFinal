@@ -1,6 +1,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="/styles/footer.css">
 </head>
+
 <body class="bg-info">
     <header class="p-3 bg-dark text-white">
         <div class="container">
@@ -71,6 +72,7 @@
             </div>
         </div>
 
+        {{#if products}}
         <div class="container">
             <div class="d-flex justify-content-end">
                 <h4>Total Price ${{this.total_Price}}</h4>
@@ -83,9 +85,8 @@
                 </form>
             </div>
 
-
-
         </div>
+        {{/if}}
     </div>
 
 
