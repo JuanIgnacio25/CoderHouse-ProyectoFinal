@@ -7,8 +7,8 @@ class ChatService {
 
     async addMessage(message) {
         try {
-            const day = new Date().toLocaleDateString();
-            const hour = new Date().toLocaleTimeString().slice(0, 5);
+            const day = new Date().toLocaleDateString('es-AR', {timeZone: "America/Argentina/Buenos_Aires"});
+            const hour = new Date().toLocaleTimeString('es-AR', {timeZone: "America/Argentina/Buenos_Aires"}).slice(0, 5);
             message.time_Stamp = `${hour} `.concat(day);
             return await this.dao.addMessage(message);
         } catch (error) {
