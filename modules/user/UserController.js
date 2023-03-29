@@ -15,6 +15,15 @@ class UserController {
         res.render('signin');
     }
 
+    renderForgotPassword(req, res) {
+        res.render('forgotPassword');
+    }
+
+    renderNewPassword(req, res) {
+        const token = req.params.token;
+        res.render('changePassword', { token });
+    }
+
     rootHandler(req, res) {
         res.redirect('/productos');
     }
@@ -42,7 +51,28 @@ class UserController {
             if (newUser) res.status(201).redirect('/login');
         } catch (error) {
             logger.error(error.message);
-            res.render('error', { error: error.message })
+            res.render('error', { error: error.message });
+        }
+    }
+
+    async forgotPassword(req, res) {
+        try {
+            const email = req.body.email;
+            const user = await userService.passwordRecovery(email);
+            if (user) res.status(200).redirect('/login');
+        } catch (error) {
+            res.render('error', { error: error.message });
+        }
+    }
+
+    async newPassword(req, res) {
+        try {
+            const passwords = req.body;
+            const token = req.params.token;
+            await userService.changePassword(passwords, token);
+            res.redirect('/login');
+        } catch (error) {
+            res.render('error', { error: error.message });
         }
     }
 

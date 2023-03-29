@@ -1,65 +1,85 @@
-<body class="bg-info d-flex justify-content-center align-items-center vh-100">
-    <div class="bg-white p-5 rounded-5 text-dark shadow" style="width:25rem">
-        <div>
-            <div class="d-flex justify-content-center">
-                <img src="https://cdn0.iconfinder.com/data/icons/phosphor-thin-vol-4/256/user-circle-thin-256.png"
-                    alt="login-icon" style="height: 8rem">
+<head>
+    <link rel="stylesheet" type="text/css" href="/styles/footer.css">
+</head>
+<body class="bg-info">
+    <div class="d-flex justify-content-center align-items-center pt-4">
+        <div class="bg-white p-5 rounded-5 text-dark shadow" style="width:25rem">
+            <div>
+                <div class="d-flex justify-content-center">
+                    <img src="https://cdn0.iconfinder.com/data/icons/phosphor-thin-vol-4/256/user-circle-thin-256.png"
+                        alt="login-icon" style="height: 8rem">
 
-            </div>
-        </div>
-        <div class="text-center fs-1 fw-bold">SignUp</div>
-        <form action="/signin" method="POST">
-            <!-- Email input -->
-            <div class="input-group mt-4">
-                <div class="input-group-text bg-info">
-                    <img src="https://cdn1.iconfinder.com/data/icons/neutro-essential/32/user-256.png"
-                        alt="username-icon" style="height:  1rem">
                 </div>
-                <input class="form-control bg-light" type="email" placeholder="Username" name="email" />
             </div>
-
-
-            <div class="input-group mt-1">
-                <div class="input-group-text bg-info">
-                    <img src="https://cdn3.iconfinder.com/data/icons/font-awesome-solid/576/id-card-64.png"
-                        alt="password-icon" style="height:  1rem">
+            <div class="text-center fs-1 fw-bold">SignUp</div>
+            <form action="/signin" method="POST">
+                <!-- Email input -->
+                <div class="input-group mt-4">
+                    <div class="input-group-text bg-info">
+                        <img src="https://cdn1.iconfinder.com/data/icons/neutro-essential/32/user-256.png"
+                            alt="username-icon" style="height:  1rem">
+                    </div>
+                    <input class="form-control bg-light" type="email" placeholder="Username" name="email" />
                 </div>
-                <input type="text" placeholder="Name" name="name" class="form-control bg-light" />
-            </div>
 
-            <div class="input-group mt-1">
-                <div class="input-group-text bg-info">
-                    <img src="https://cdn1.iconfinder.com/data/icons/neutro-essential/32/home-64.png"
-                        alt="password-icon" style="height:  1rem">
+
+                <div class="input-group mt-1">
+                    <div class="input-group-text bg-info">
+                        <img src="https://cdn3.iconfinder.com/data/icons/font-awesome-solid/576/id-card-64.png"
+                            alt="password-icon" style="height:  1rem">
+                    </div>
+                    <input type="text" placeholder="Name" name="name" class="form-control bg-light" />
                 </div>
-                <input type="text" placeholder="Address" name="address" class="form-control bg-light" />
-            </div>
 
-            <!-- Password input -->
-            <div class="input-group mt-1">
-                <div class="input-group-text bg-info">
-                    <img src="https://cdn1.iconfinder.com/data/icons/web-and-user-interface-23/512/141-256.png"
-                        alt="password-icon" style="height:  1rem">
+                <div class="input-group mt-1">
+                    <div class="input-group-text bg-info">
+                        <img src="https://cdn1.iconfinder.com/data/icons/neutro-essential/32/home-64.png"
+                            alt="password-icon" style="height:  1rem">
+                    </div>
+                    <input type="text" placeholder="Address" name="address" class="form-control bg-light" />
                 </div>
-                <input type="password" placeholder="Password" name="password" class="form-control bg-light" />
-            </div>
 
-            <div class="input-group mt-1">
-                <div class="input-group-text bg-info">
-                    <img src="https://cdn1.iconfinder.com/data/icons/web-and-user-interface-23/512/141-256.png"
-                        alt="password-icon" style="height:  1rem">
+                <!-- Password input -->
+                <div class="input-group mt-1">
+                    <div class="input-group-text bg-info">
+                        <img src="https://cdn1.iconfinder.com/data/icons/web-and-user-interface-23/512/141-256.png"
+                            alt="password-icon" style="height:  1rem">
+                    </div>
+                    <input type="password" placeholder="Password" name="password" class="form-control bg-light" />
                 </div>
-                <input type="password" placeholder="Verify Password" name="verifiedPassword"
-                    class="form-control bg-light" />
+
+                <div class="input-group mt-1">
+                    <div class="input-group-text bg-info">
+                        <img src="https://cdn1.iconfinder.com/data/icons/web-and-user-interface-23/512/141-256.png"
+                            alt="password-icon" style="height:  1rem">
+                    </div>
+                    <input type="password" placeholder="Verify Password" name="verifiedPassword"
+                        class="form-control bg-light" />
+                </div>
+
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-info w-100 mt-3 fw-semibold shadow-sm">SignUp</button>
+
+                <!-- Register buttons -->
+            </form>
+            <div class="text-center">
+                <p>Have an account? <a href="/login" class="text-decoration-none text-info fw-semibold">Login</a></p>
             </div>
-
-            <!-- Submit button -->
-            <button type="submit" class="btn btn-info w-100 mt-3 fw-semibold shadow-sm">SignUp</button>
-
-            <!-- Register buttons -->
-        </form>
-        <div class="text-center">
-            <p>Have an account? <a href="/login" class="text-decoration-none text-info fw-semibold">Login</a></p>
         </div>
     </div>
+
+    <footer>
+        <div class="container">
+            <hr class="featurette-divider">
+        </div>
+        <div class="d-flex justify-content-center align-items-center ">
+            <p>© 2023 Juan Ignacio Colli · <a href="https://github.com/JuanIgnacio25" target="_blank"><img
+                        src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-social-github-64.png"
+                        alt="google-icon" style="height: 1.6rem"></a> · <a
+                    href="https://www.linkedin.com/in/juan-ignacio-colli-317696218/" target="_blank"><img
+                        src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/linkedin-64.png"
+                        alt="google-icon" style="height: 1.6rem"></a></p>
+        </div>
+    </footer>
+
 </body>

@@ -1,58 +1,63 @@
-<body class="bg-info d-flex justify-content-center align-items-center vh-100">
-    <div class="bg-white p-5 rounded-5 text-dark shadow" style="width:25rem">
-        <div>
-            <div class="d-flex justify-content-center">
-                <img src="https://cdn0.iconfinder.com/data/icons/phosphor-thin-vol-4/256/user-circle-thin-256.png"
-                    alt="login-icon" style="height: 8rem">
+<head>
+    <link rel="stylesheet" type="text/css" href="/styles/footer.css">
+</head>
+<body class="bg-info pt-5">
+    <div class="d-flex justify-content-center align-items-center pt-5">
+        <div class="bg-white p-5 rounded-5 text-dark shadow" style="width:25rem">
+            <div>
+                <div class="d-flex justify-content-center">
+                    <img src="https://cdn0.iconfinder.com/data/icons/phosphor-thin-vol-4/256/user-circle-thin-256.png"
+                        alt="login-icon" style="height: 8rem">
 
-            </div>
-        </div>
-        <div class="text-center fs-1 fw-bold">Login</div>
-        <form action="/login" method="POST">
-            <!-- Email input -->
-            <div class="input-group mt-4">
-                <div class="input-group-text bg-info">
-                    <img src="https://cdn1.iconfinder.com/data/icons/neutro-essential/32/user-256.png"
-                        alt="username-icon" style="height:  1rem">
                 </div>
-                <input class="form-control bg-light" type="email" placeholder="Username" name="email" />
             </div>
+            <div class="text-center fs-1 fw-bold">Login</div>
+            <form action="/login" method="POST">
+                <!-- Email input -->
+                <div class="input-group mt-4">
+                    <div class="input-group-text bg-info">
+                        <img src="https://cdn1.iconfinder.com/data/icons/neutro-essential/32/user-256.png"
+                            alt="username-icon" style="height:  1rem">
+                    </div>
+                    <input class="form-control bg-light" type="email" placeholder="Username" name="email" />
+                </div>
 
-            <!-- Password input -->
-            <div class="input-group mt-1">
-                <div class="input-group-text bg-info">
-                    <img src="https://cdn1.iconfinder.com/data/icons/web-and-user-interface-23/512/141-256.png"
-                        alt="password-icon" style="height:  1rem">
+                <!-- Password input -->
+                <div class="input-group mt-1">
+                    <div class="input-group-text bg-info">
+                        <img src="https://cdn1.iconfinder.com/data/icons/web-and-user-interface-23/512/141-256.png"
+                            alt="password-icon" style="height:  1rem">
+                    </div>
+                    <input type="password" placeholder="Password" name="password" class="form-control bg-light" />
                 </div>
-                <input type="password" placeholder="Password" name="password" class="form-control bg-light" />
-            </div>
-            <!-- 2 column grid layout for inline styling -->
-            <div class="d-flex justify-content-around mt-1">
-                <div class="col d-flex justify-content-center">
-                    <!-- Checkbox -->
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="form2Example34" checked />
-                        <label class="form-check-label" style="font-size: 0.9rem" for="form2Example34"> Remember me
-                        </label>
+                <!-- 2 column grid layout for inline styling -->
+                <div class="d-flex justify-content-around mt-1">
+                    <div class="col d-flex justify-content-center">
+                        <!-- Checkbox -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="form2Example34" checked />
+                            <label class="form-check-label" style="font-size: 0.9rem" for="form2Example34"> Remember me
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <!-- Simple link -->
+                        <a href="/forgot-password" class="text-decoration-none text-info fw-semibold"
+                            style="font-size: 0.9rem">Forgot
+                            your password?</a>
                     </div>
                 </div>
 
-                <div>
-                    <!-- Simple link -->
-                    <a href="#!" class="text-decoration-none text-info fw-semibold" style="font-size: 0.9rem">Forgot
-                        your password?</a>
-                </div>
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-info w-100 mt-3 fw-semibold shadow-sm">Login</button>
+
+                <!-- Register buttons -->
+            </form>
+            <div class="text-center">
+                <p>Not a member? <a href="/signin" class="text-decoration-none text-info fw-semibold">Sign up</a></p>
             </div>
-
-            <!-- Submit button -->
-            <button type="submit" class="btn btn-info w-100 mt-3 fw-semibold shadow-sm">Login</button>
-
-            <!-- Register buttons -->
-        </form>
-        <div class="text-center">
-            <p>Not a member? <a href="/signin" class="text-decoration-none text-info fw-semibold">Sign up</a></p>
-        </div>
-        <!--
+            <!--
         <div class="p-3">
             <div class="border-bottom text-center" style="height: 0.9rem">
                 <span class="bg-white px-3">or</span>
@@ -65,5 +70,21 @@
             style="height: 1.6rem">
             <div class="fw-semibold">Continue with Google</div>
         </div>-->
+        </div>
     </div>
+
+
+    <footer class="">
+        <div class="container">
+            <hr class="featurette-divider">
+        </div>
+        <div class="d-flex justify-content-center align-items-center ">
+            <p>© 2023 Juan Ignacio Colli · <a href="https://github.com/JuanIgnacio25" target="_blank"><img
+                        src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-social-github-64.png"
+                        alt="google-icon" style="height: 1.6rem"></a> · <a
+                    href="https://www.linkedin.com/in/juan-ignacio-colli-317696218/" target="_blank"><img
+                        src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/linkedin-64.png"
+                        alt="google-icon" style="height: 1.6rem"></a></p>
+        </div>
+    </footer>
 </body>

@@ -240,3 +240,9 @@
 {"level":"error","message":"Algun campo esta vacio o es invalido"}
 {"level":"error","message":"No puede agregar un producto que ya esta en el carrito"}
 {"level":"error","message":"No puede agregar un producto que ya esta en el carrito"}
+{"level":"error","message":"res.reder is not a function"}
+{"level":"warn","message":"404 ruta /favicon.ico, método GET no implementada"}
+{"level":"warn","message":"404 ruta /eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsInVzZXJFbWFpbCI6Im5hY2hvY29sbGkxQGdtYWlsLmNvbSIsImlhdCI6MTY3ODM5ODU3NywiZXhwIjoxNjc4Mzk5MTc3fQ.6xyAo70yqBE4RC8auwm2UR6dIj0oz1MYsYkpvu9szPM, método GET no implementada"}
+{"level":"warn","message":"404 ruta /eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsInVzZXJFbWFpbCI6Im5hY2hvY29sbGkxQGdtYWlsLmNvbSIsImlhdCI6MTY3ODkxNTk1MCwiZXhwIjoxNjc4OTE2NTUwfQ.F0eR3xOxrdaTHrvgLD6RLq9bs5IUzwVjcWfhgqhghek, método GET no implementada"}
+{"level":"warn","message":"404 ruta /new-password/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsInVzZXJFbWFpbCI6Im5hY2hvY29sbGkxQGdtYWlsLmNvbSIsImlhdCI6MTY3OTQyNjEwMSwiZXhwIjoxNjc5NDI2NzAxfQ.K2ea9Wb0LKTy1zXRWKUq0u8x3HP65Y93v8TqplPAoJA, método GET no implementada"}
+{"level":"warn","message":"404 ruta /new-password/nachocolli1@gmail.com/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsInVzZXJFbWFpbCI6Im5hY2hvY29sbGkxQGdtYWlsLmNvbSIsImlhdCI6MTY3OTQyOTU3MywiZXhwIjoxNjc5NDMwMTczfQ.8uxKmp-XeI9sOhtRLkpJLQRgw-838Q936llHswtDWnY, método GET no implementada"}

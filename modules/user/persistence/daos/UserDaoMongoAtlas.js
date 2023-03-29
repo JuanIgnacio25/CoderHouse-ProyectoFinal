@@ -9,7 +9,8 @@ const userSchema = new mongoose.Schema({
     address: { type: String },
     id: { type: Number },
     admin: { type: Boolean },
-    cart_Id: { type: Number }
+    cart_Id: { type: Number },
+    recovery_Token: { type: String }
 });
 
 let instance = null;
@@ -41,6 +42,7 @@ class UserDaoMongoAtlas {
     async saveNewUser(user) {
         try {
             user.id = await this.createId();
+            user.recovery_Token = 'recovery_token';
             const newUser = this.collection(user);
             const result = await newUser.save();
             return result;
@@ -69,6 +71,33 @@ class UserDaoMongoAtlas {
         try {
             const result = await this.collection.updateOne({ id: user_Id }, { $set: { cart_Id: newCart_Id } });
             return result
+        } catch (error) {
+            throw error;
+        }
+    }
+
+    async updateRecoveryToken(user_Id, recovery_Token) {
+        try {
+            const result = await this.collection.updateOne({ id: user_Id }, { $set: { recovery_Token: recovery_Token } });
+            return result;
+        } catch (error) {
+            throw error
+        }
+    }
+
+    async findUserByToken(token) {
+        try {
+            const result = (await this.collection.find({ recovery_Token: token }))[0];
+            return result;
+        } catch (error) {
+            throw error
+        }
+    }
+
+    async updatePassword(password, user_Id) {
+        try {
+            const result = await this.collection.updateOne({ id: user_Id }, { $set: { password: password } });
+            return result;
         } catch (error) {
             throw error;
         }

@@ -36,4 +36,16 @@ const sendEmailNewUser = (fromEmail, toEmail, user) => {
 }).catch(console.log)
 }
 
-module.exports = {sendEmailNewOrder, sendEmailNewUser}
+const sendEmailPasswordRecovery = (fromEmail, toEmail,link) => {
+  transport.sendMail({
+    from: `Juan Ignacio ${fromEmail}`,
+    to:toEmail,
+    html:`<h1>Here is the link to recover your password.</h1>
+    <h3>${link}</h3>`,
+    subject:`Password Recovery`
+}).then((data)=> {
+    console.log("Email enviado");
+}).catch(console.log)
+}
+
+module.exports = {sendEmailNewOrder, sendEmailNewUser , sendEmailPasswordRecovery}
