@@ -2,7 +2,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 //const {logger} = require('../utils/logger');
 
-const { UserService } = require("../modules/user/UserService");
+const { UserService } = require("../models/user/UserService");
 const userService = new UserService(process.env.NODE_ENV);
 
 

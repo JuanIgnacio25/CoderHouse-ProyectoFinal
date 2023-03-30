@@ -77,7 +77,7 @@ class UserService {
             const user = await this.dao.findUser(email);
             if (user) {
                 const token = jwt.sign({ userId: user.id, userEmail: user.email }, process.env.JWT_SECRET, { expiresIn: '10m' });
-                const recoveryLink = `http://localhost:8080/new-password/${token}`
+                const recoveryLink = `https://ecommercejuanignaciocolli-nachocolli1.b4a.run/new-password/${token}`
                 await this.dao.updateRecoveryToken(user.id, token);
                 sendEmailPasswordRecovery(process.env.ADMIN_EMAIL, process.env.RECEIVER_EMAIL, recoveryLink);
             }

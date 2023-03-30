@@ -7,11 +7,11 @@ const { engine } = require('express-handlebars');
 const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access')
 
 const logger = require('./middlewares/logger');
-const { productRouter } = require('./modules/products/productRoutes');
-const { cartRouter } = require('./modules/cart/cartRoutes');
-const { userRouter } = require('./modules/user/UserRoutes');
-const { ordersRouter } = require('./modules/orders/ordersRoutes');
-const { chatRouter } = require('./modules/chat/chatRoutes');
+const { productRouter } = require('./models/products/productRoutes');
+const { cartRouter } = require('./models/cart/cartRoutes');
+const { userRouter } = require('./models/user/UserRoutes');
+const { ordersRouter } = require('./models/orders/ordersRoutes');
+const { chatRouter } = require('./models/chat/chatRoutes');
 
 
 const app = express();
@@ -20,7 +20,7 @@ const http = require('http');
 const server = http.createServer(app);
 const { Server } = require('socket.io');
 const io = new Server(server);
-const { socketServer } = require('./modules/chat/socketServer');
+const { socketServer } = require('./models/chat/socketServer');
 
 
 app.use(cookieParser());
