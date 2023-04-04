@@ -17,7 +17,6 @@ class UserService {
             const userFound = await this.dao.findUser(email);
             if (userFound !== undefined) throw new Error('Usuario Existente');
         } catch (error) {
-            logger.error(error.message);
             throw error;
         }
     }
@@ -41,7 +40,6 @@ class UserService {
             const newUser = await this.dao.saveNewUser(user);
             return newUser;
         } catch (error) {
-            logger.error(error.message);
             throw error;
         }
     }
@@ -50,7 +48,6 @@ class UserService {
         try {
             return await this.dao.findUser(email);
         } catch (error) {
-            logger.error(error.message);
             throw error;
         }
     }
@@ -67,7 +64,6 @@ class UserService {
         try {
             await this.dao.updateCartId(user_Id, newCartId);
         } catch (error) {
-            logger.error(error.message);
             throw error;
         }
     }
@@ -83,14 +79,14 @@ class UserService {
             }
             return user;
         } catch (error) {
-            console.log(error);
+            throw error
         }
     }
 
     async changePassword(passwords, token) {
         try {
             //Verifico si la contraseña coincide con la segunda contraseña.
-            if(!(passwords.password === passwords.verifiedPassword)) throw new Error('Las contraseñas no coinciden');
+            if (!(passwords.password === passwords.verifiedPassword)) throw new Error('Las contraseñas no coinciden');
 
             const user = await this.findUserByToken(token);
 
@@ -98,7 +94,7 @@ class UserService {
             if (await bcrypt.compare(passwords.password, user.password)) throw new Error('La contraseña no puede ser igual a la anterior');
 
             const encryptedPassword = bcrypt.hashSync(passwords.password, bcrypt.genSaltSync(10));
-            await this.dao.updatePassword(encryptedPassword,user.id);
+            await this.dao.updatePassword(encryptedPassword, user.id);
         } catch (error) {
             throw error;
         }

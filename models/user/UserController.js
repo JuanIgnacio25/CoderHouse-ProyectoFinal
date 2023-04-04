@@ -61,6 +61,7 @@ class UserController {
             const user = await userService.passwordRecovery(email);
             if (user) res.status(200).redirect('/login');
         } catch (error) {
+            logger.error(error.message);
             res.render('error', { error: error.message });
         }
     }
@@ -72,6 +73,7 @@ class UserController {
             await userService.changePassword(passwords, token);
             res.redirect('/login');
         } catch (error) {
+            logger.error(error.message);
             res.render('error', { error: error.message });
         }
     }

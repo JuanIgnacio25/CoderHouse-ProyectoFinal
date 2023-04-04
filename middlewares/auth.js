@@ -1,6 +1,6 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-//const {logger} = require('../utils/logger');
+const { logger } = require('../utils/logger');
 
 const { UserService } = require("../models/user/UserService");
 const userService = new UserService(process.env.NODE_ENV);
@@ -10,7 +10,9 @@ const authenticationCheck = async (req, res, next) => {
   try {
     let user = await userService.findUser(req.body.email);
     if (user === undefined) {
-      return res.render('error', { error: `Email Incorrecto` });
+      let error = 'Email Incorrecto';
+      logger.error(error);
+      return res.render('error', { error: error });
     }
 
     if (await bcrypt.compare(req.body.password, user.password)) {
@@ -21,7 +23,9 @@ const authenticationCheck = async (req, res, next) => {
       });
       next();
     } else {
-      res.render("error", { error: "Contraseña Incorrecta" });
+      const error = 'Contraseña Incorrecta';
+      logger.error(error);
+      return res.render('error', { error: error });
     }
   } catch (err) {
     console.log(err);

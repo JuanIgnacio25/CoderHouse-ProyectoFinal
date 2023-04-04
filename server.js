@@ -50,7 +50,7 @@ io.on('connection' , (socket) => {
 }) 
 
 app.use(logger.errorRoute);
-app.use(logger.catchError);
+//app.use(logger.catchError);
 
 const port = process.env.PORT || 8080;
 
